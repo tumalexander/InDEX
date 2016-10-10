@@ -1,0 +1,165 @@
+<html>
+<head><title>ประวัติส่วนตัว</title></head>
+<body background="img/4.jpg"> 
+<center><a href="ประวัติทั่วไป.html" target="frame3"><font color="#3300FF">ประวัติส่วนตัว</a><br><br></font>
+<center><a href="สิ่งที่ชอบ.html" target="frame3"> <font color="#3300FF">สิ่งที่ชอบ</a><br><br></font>
+<center><a href="สิ่งที่ไม่ชอบ.html" target="frame3"><font color="#3300FF">สิ่งที่ไม่ชอบ </a><br><br></font>
+<center><a href="ที่สุดในชีวิต.html" target="frame3"><font color="#3300FF">ที่สุดในชีวิต</a><br><br></font>
+<center><a href="เกี่ยวกับเรา.html" target="frame3"><font color="#3300FF"> เกี่ยวกับเรา</a><br><br></font>
+
+<embed src="http://www.clocklink.com/clocks/5005-black.swf?TimeZone=ICT&"  width="120" height="40" wmode="transparent" type="application/x-shockwave-flash"></embed>
+<marquee direction=up height=130 onMouseOut=this.start() onMouseOver=this.stop() scrollamount=1 scrolldelay=30 width=100% truespeed=true style="filter:wave(add=0, lightstrength=80, phase=1, strength=1, freq=2);color:#FF0000">
+<iframe width="160" height="150" src="http://www.youtube.com/embed/5Mv3keHuliU?&autoplay=1&loop=1&playlist=5Mv3keHuliU"frameborder="0" allowfullscreen>
+</iframe></marquee>
+<script>
+ startday = new Date();
+clockStart = startday.getTime();
+
+function initStopwatch() 
+{ 
+ var myTime = new Date(); 
+        var timeNow = myTime.getTime();  
+        var timeDiff = timeNow - clockStart; 
+        this.diffSecs = timeDiff/1000; 
+        return(this.diffSecs); 
+} 
+
+function getSecs() 
+{ 
+        var mySecs = initStopwatch(); 
+        var mySecs1 =  ""+mySecs; 
+        mySecs1= mySecs1.substring(0,mySecs1.indexOf(".")) + " วินาที "; 
+        document.forms[0].timespent.value = mySecs1 
+        window.setTimeout('getSecs()',1000); 
+}
+
+</script>
+</head>
+
+<body onLoad="window.setTimeout('getSecs()',1)"
+<p align="center">&nbsp;<form>
+<p align="center"><font face="MS Sans Serif"  color="#000000"size="3"><span style="background-color:#FFFFFF">คุณอยู่ในหน้านี้มานาน: 
+<input size=9 name=timespent>
+</font>
+</form>
+</body>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+monthnames = new Array(
+"January",
+"Februrary",
+"March",
+"April",
+"May",
+"June",
+"July",
+"August",
+"September",
+"October",
+"November",
+"Decemeber");
+var linkcount=0;
+function addlink(month, day, href) {
+var entry = new Array(3);
+entry[0] = month;
+entry[1] = day;
+entry[2] = href;
+this[linkcount++] = entry;
+}
+Array.prototype.addlink = addlink;
+linkdays = new Array();
+monthdays = new Array(12);
+monthdays[0]=31;
+monthdays[1]=28;
+monthdays[2]=31;
+monthdays[3]=30;
+monthdays[4]=31;
+monthdays[5]=30;
+monthdays[6]=31;
+monthdays[7]=31;
+monthdays[8]=30;
+monthdays[9]=31;
+monthdays[10]=30;
+monthdays[11]=31;
+todayDate=new Date();
+thisday=todayDate.getDay();
+thismonth=todayDate.getMonth();
+thisdate=todayDate.getDate();
+thisyear=todayDate.getYear();
+thisyear = thisyear % 100;
+thisyear = ((thisyear < 50) ? (2000 + thisyear) : (1900 + thisyear));
+if (((thisyear % 4 == 0) 
+&& !(thisyear % 100 == 0))
+||(thisyear % 400 == 0)) monthdays[1]++;
+startspaces=thisdate;
+while (startspaces > 7) startspaces-=7;
+startspaces = thisday - startspaces + 1;
+if (startspaces < 0) startspaces+=7;
+document.write("<table border=2 bgcolor=white ");
+document.write("bordercolor=black><font color=black>");
+document.write("<tr><td colspan=7><center><strong>" 
++ monthnames[thismonth] + " " + thisyear 
++ "</strong></center></font></td></tr>");
+document.write("<tr>");
+document.write("<td align=center>Su</td>");
+document.write("<td align=center>M</td>");
+document.write("<td align=center>Tu</td>");
+document.write("<td align=center>W</td>");
+document.write("<td align=center>Th</td>");
+document.write("<td align=center>F</td>");
+document.write("<td align=center>Sa</td>"); 
+document.write("</tr>");
+document.write("<tr>");
+for (s=0;s<startspaces;s++) {
+document.write("<td> </td>");
+}
+count=1;
+while (count <= monthdays[thismonth]) {
+for (b = startspaces;b<7;b++) {
+linktrue=false;
+document.write("<td>");
+for (c=0;c<linkdays.length;c++) {
+if (linkdays[c] != null) {
+if ((linkdays[c][0]==thismonth + 1) && (linkdays[c][1]==count)) {
+document.write("<a href=\"" + linkdays[c][2] + "\">");
+linktrue=true;
+      }
+   }
+}
+if (count==thisdate) {
+document.write("<font color='FF0000'><strong>");
+}
+if (count <= monthdays[thismonth]) {
+document.write(count);
+}
+else {
+document.write(" ");
+}
+if (count==thisdate) {
+document.write("</strong></font>");
+}
+if (linktrue)
+document.write("</a>");
+document.write("</td>");
+count++;
+}
+document.write("</tr>");
+document.write("<tr>");
+startspaces=0;
+}
+document.write("</table></p>");
+// End -->
+</SCRIPT>
+<script language="JavaScript">   function loadalert ()   {alert("ห วั ด ดี ค ร๊ ๅ บ O.o")   }   loadalert()   </script>
+<script language="JavaScript">   function loadalert ()   {alert("ยิ น ดี ต้ อ น รั บ เ ข้ า สู่ เ ว็ บ")   }   loadalert()   </script>
+<script language="JavaScript">   function loadalert ()   {alert(" อ า ณ า จั ก ร ป ร ะวั ติ ข อ ง ผ ม ")   }   loadalert()   </script>
+<script language="JavaScript">   function loadalert ()   {alert(" เ ชิ ญ ช มไ ด้เ ล ย ค รั บ*+.+*")   }   loadalert()   </script>                                                            <div id="floatboxstart"></div>
+                                                            <div id="floatwriter">
+                                                                <form name="floatcomment" action="addCommentX.php" method="post" accept-charset="TIS-620" data-mode="">
+        <input type="hidden" name="refer_id" value="244353">
+    <input type="hidden" name="group_id" value="">
+    <input type="hidden" name="chapter" value="">
+    <input type="hidden" name="t_pic" value="n-s">
+</form>
+</body>
+</html>
